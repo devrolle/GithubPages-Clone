@@ -12,11 +12,7 @@ git clone git@github.com:devrolle/GithubPages-Clone.git
 
 ```
 yarn install
-```
-
-or
-
-```
+<!-- or -->
 npm install
 ```
 
@@ -24,10 +20,6 @@ npm install
 
 ```
 yarn serve
-```
-
-or
-
-```
+<!-- or -->
 npm run serve
 ```
