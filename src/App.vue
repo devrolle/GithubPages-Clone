@@ -1,14 +1,17 @@
 <template>
     <Hero />
+    <Tutorial />
 </template>
 
 <script>
 import Hero from './components/Hero.vue';
+import Tutorial from './components/Tutorial.vue';
 
 export default {
     name: 'App',
     components: {
         Hero,
+        Tutorial,
     },
 };
 </script>
