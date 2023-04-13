@@ -1,19 +1,33 @@
-# github-pages-copy
+# GitHub Pages Clone
 
-## Project setup
+## Setup Instructions
+
+Clone the repository
+
+```
+git clone git@github.com:devrolle/GithubPages-Clone.git
+```
+
+## Install node_modules
+
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+or
+
+```
+npm install
+```
+
+## Start Up the project
+
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+or
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+npm run serve
+```
