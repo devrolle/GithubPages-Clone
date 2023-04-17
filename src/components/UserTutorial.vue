@@ -1,10 +1,8 @@
 <template>
     <TutorialStep :stepNumber="1">
         <div class="text-center py-10 px-3 w-3/5">
-            <h5 class="text-[30px] font-roboto font-light">
-                Create a repository
-            </h5>
-            <p class="m-[30px] text-base font-light leading-7">
+            <p class="step-heading">Create a repository</p>
+            <p class="step-text m-[30px]">
                 Head over to <a href="https://github.com">GitHub</a> and
                 <a href="https://github.com/new"
                     >create a new public repository</a
@@ -26,21 +24,90 @@
             />
         </div>
     </TutorialStep>
+    <TutorialStep stepNumber="?">
+        <div class="step-content">
+            <p class="step-heading">What git client are you using?</p>
+            <div class="tabs mt-[30px]">
+                <button
+                    @click="($event) => updateGitType('terminal')"
+                    :class="
+                        gitType === 'terminal' ? 'tab active' : 'tab in-active'
+                    "
+                >
+                    A terminal
+                </button>
+                <button
+                    @click="($event) => updateGitType('desktop')"
+                    :class="
+                        gitType === 'desktop' ? 'tab active' : 'tab in-active'
+                    "
+                >
+                    GitHub Desktop
+                </button>
+                <button
+                    @click="($event) => updateGitType('unknown')"
+                    :class="
+                        gitType === 'unknown' ? 'tab active' : 'tab in-active'
+                    "
+                >
+                    I don&apos;t know
+                </button>
+            </div>
+        </div>
+    </TutorialStep>
+    <UserTerminalTutorial v-show="gitType === 'terminal'" />
+    <UserDesktopTutorial v-show="gitType === 'desktop'" />
+    <UserUnknownGitTutorial v-show="gitType === 'unknown'" />
 </template>
 
 <script>
 import TutorialStep from './TutorialStep.vue';
+import UserTerminalTutorial from './UserTerminalTutorial.vue';
+import UserDesktopTutorial from './UserDesktopTutorial.vue';
+import UserUnknownGitTutorial from './UserUnknownGitTutorial.vue';
 
 export default {
     name: 'UserTutorial',
     components: {
         TutorialStep,
+        UserTerminalTutorial,
+        UserDesktopTutorial,
+        UserUnknownGitTutorial,
+    },
+    data() {
+        return {
+            gitType: 'terminal',
+        };
+    },
+    methods: {
+        updateGitType(type) {
+            if (this.gitType !== type) {
+                this.gitType = type;
+            }
+        },
     },
 };
 </script>
 
-<style scoped>
-p a {
-    color: #4183c4;
+<style>
+.step-heading {
+    font-family: 'Roboto', 'sans serif';
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.step-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 200%;
 }
 </style>

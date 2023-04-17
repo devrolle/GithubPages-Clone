@@ -1,5 +1,5 @@
 <template>
-    <section class="flex flex-col items-center">
+    <section class="flex flex-col items-center bg-[#f5f5f5]">
         <div class="max-w-[910px] text-center">
             <h3 class="font-roboto font-light text-5xl mt-[90px]">
                 Ready to get started? Build your own site from scratch or
@@ -11,7 +11,7 @@
                 You get one site per GitHub account and organization,<br />
                 and unlimited project sites. Let‘s get started.
             </h4>
-            <div id="tabs" class="mt-[45px]">
+            <div class="tabs mt-[45px]">
                 <button
                     @click="($event) => updateType('user-site')"
                     :class="
@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .tab {
     padding: 10px 20px;
     font-size: 15px;

@@ -1,6 +1,6 @@
 <template>
     <div
-        class="relative flex items-center max-h-[331px] border border-[#ddd] rouned-[5px]"
+        class="relative flex items-center max-h-[331px] border border-[#ddd] rouned-[5px] mb-[70px] bg-white"
     >
         <slot />
         <span
@@ -18,3 +18,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+p a {
+    color: #4183c4;
+}
+</style>
